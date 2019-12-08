@@ -19,7 +19,7 @@ namespace UserMaintance
         {
             InitializeComponent();
 
-            label1.Text = Resource1.FullName;
+            //label1.Text = Resource1.FullName;
             //label2.Text = Resource1.FirstName;
             button1.Text = Resource1.Add;
 
@@ -28,6 +28,7 @@ namespace UserMaintance
             listBox1.DisplayMember = "FullName";
 
             button2.Text = "Fájlba írás";
+            button3.Text = "Törlés";
 
         }
 
@@ -69,6 +70,11 @@ namespace UserMaintance
             MessageBox.Show("A fájlba írás megtörtént");
 
             Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            users.Remove((User)listBox1.SelectedItem);
         }
     }
 }
